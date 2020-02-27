@@ -1,0 +1,83 @@
+/*
+    css syntax 101:
+
+    html_tag {
+        ...
+    }
+
+    .class {
+        ...
+    }
+
+    #id {
+        ...
+    }
+
+    lehet kombinálni, pl.
+
+    div.red {
+        ...
+    }
+
+    a.navigation#active {
+        ...
+    }
+
+
+*/
+
+body {
+    font-family: Arial, Helvetica, sans-serif; /* betūtípus állítás, fontos, hogy mindig egy betūcsaláddal véggzõdjön: serif, sans-serif, cursive, monospace */
+    font-size: xx-large; /* betūméret állítása, lehetséges értékek: [0,∞)%, [0,∞)rem/em (basically % / 100), [0,∞)px (ezt a tárgy keretein belül kerüljétek) */
+    margin: 0; /* margó, avagy az elemet körülvevõ üres hely beállítása. 1 érték esetén minden oldal egyenlõ, egyébként syntax: margin: top right bottom left;*/
+    /* 
+        ^ külön is állítható:
+        margin-top, margin-bottom, margin-left, margin-right 
+    */
+    padding: 0; /* hasonló mint a margó, de a megadott üres hely az elem része lesz*/
+}
+
+header {
+    background-color: gray; /* adott elem háttérszínének állítása, lehetséges értékek: név, rgb(red, green, blue), hexadecimális szám (#000000-#FFFFFF), rgba(red, green, blue, alpha (átlátszóság 0-1 közt) pl. rgba(20,20,20, 0.2), hsl(hue, saturation, lightness) */
+    height: 40px; /* adott elem magassága, lehetséges értékek: [0, ∞)px, [0, ∞)%, [0, ∞)vh/vw */
+}
+
+nav {
+    height: 100%;
+    float: right; /* adott elem igazítása jobbra/balra */
+}
+
+nav a {
+    display: inline-flex; /* errõl majd késõbb részletesen beszélünk, egyenlõre annyit elég tudni, hogy */
+    align-items: center; /*  ezzel könnyen lehet függõlegesen középre igazítani egy elem tartalmát     */
+    margin: 0 2px 0 2px;
+    padding: 0 5px 0 5px;
+    height: 100%;
+    text-decoration: none; /* szöveg aláhúzás (vagy fõlé) */
+    color: white; /* egy elemen belüli szövegszín állítása, értékek: lásd 41. sor */
+}
+
+
+.absolute-centered {
+    background-color: red;
+    position: fixed; /* adott elem elhelyezkedése egy oldalon belül, az oldalhoz vagy más elemhez képest */
+    top: 50%;   /* elem pozicionálása, amennyiben a position fixed, vagy absolute */
+    left: 50%; /*  létezik még right/bottom is                                   */
+    transform: translate(-50%, -50%); /* errõl majd késõbb beszélünk */
+}
+
+
+nav a:hover {
+    color: cyan;
+}
+
+div {
+    display: inline;
+    padding: 10px 5px 20px 40px; /* padding: top right bottom left */
+    background-color: lightcoral;
+}
+
+div.margin { /* tag.class == <tag class="class">-re style */
+    padding: 0;
+    margin: 10px 5px 20px 40px;
+}
